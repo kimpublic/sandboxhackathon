@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gmail Clone</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox Clone</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <img src="logo.jfif" alt="Logo" class="logo">
-    <input type="text" placeholder="Search">
-    <div class="profile">Profile</div>
-  </header>
-  <nav>
-    <ul>
-      <li>Inbox</li>
-      <li>Sent</li>
-      <li>Drafts</li>
-    </ul>
-  </nav>
-  <main>
-    <div class="email-list">
-      <!-- Email items will go here -->
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">📧</div>
+        <input type="text" placeholder="메일 검색" class="search-bar">
+        <div class="profile">
+            <img src="https://via.placeholder.com/32" alt="Profile">
+        </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="compose-btn">편지쓰기</button>
+            <ul class="sidebar-menu">
+                <li>받은편지함</li>
+                <li>별표편지함</li>
+                <li>다시 알림 항목</li>
+                <li>중요편지함</li>
+                <li>보낸편지함</li>
+                <li>임시보관함</li>
+                <li>카테고리</li>
+                <li>소셜</li>
+                <li>업데이트</li>
+                <li>포럼</li>
+                <li>프로모션</li>
+                <li>더보기</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="toolbar">
+                <input type="checkbox">
+                <button>⟳</button>
+                <button>⋮</button>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active">기본</button>
+                <button class="tab">프로모션</button>
+                <button class="tab">소셜</button>
+                <button class="tab">업데이트</button>
+            </div>
+
+            <div class="email-list">
+                <div class="email-item">
+                    <input type="checkbox">
+                    <span class="star">⭐</span>
+                    <span class="sender">GitHub</span>
+                    <span class="subject">A first-party GitHub OAuth application has been added</span>
+                    <span class="time">오전 11:44</span>
+                </div>
+
+                <div class="email-item">
+                    <input type="checkbox">
+                    <span class="star">⭐</span>
+                    <span class="sender">Minjoong Kim</span>
+                    <span class="subject">kimpublic invited you to kimpubl...</span>
+                    <span class="time">오전 11:14</span>
+                </div>
+
+                <div class="email-item">
+                    <input type="checkbox">
+                    <span class="star">⭐</span>
+                    <span class="sender">Wells Fargo Online</span>
+                    <span class="subject">Fraud & Scam Alert: Card Collection Scams</span>
+                    <span class="time">오전 9:05</span>
+                </div>
+                <!-- Add more emails here -->
+            </div>
+        </main>
     </div>
-  </main>
-  <footer>
-    <!-- Footer content here -->
-  </footer>
-  <script src="scripts.js"></script>
 </body>
 </html>
