@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Inbox</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #email-list { margin-top: 20px; }
+        .email-item { padding: 10px; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>📩 Gmail Inbox</h1>
+    <button onclick="fetchEmails()">📬 이메일 불러오기</button>
+    <div id="email-list"></div>
+
+    <script>
+        async function fetchEmails() {
+            const response = await fetch('http://localhost:3000/emails'); // Node.js 서버에서 데이터 요청
+            const emails = await response.json();
+
+            const emailListDiv = document.getElementById('email-list');
+            emailListDiv.innerHTML = ''; // 기존 목록 초기화
+
+            if (emails.length === 0) {
+                emailListDiv.innerHTML = '<p>📭 받은 메일이 없습니다.</p>';
+                return;
+            }
+
+            emails.forEach(email => {
+                const emailItem = document.createElement('div');
+                emailItem.classList.add('email-item');
+                emailItem.textContent = `📨 ${email.subject}`;
+                emailListDiv.appendChild(emailItem);
+            });
+        }
+    </script>
+</body>
+</html>
